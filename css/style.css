@@ -1,0 +1,141 @@
+@font-face {
+    font-family: 'hrm';
+	src: url("/fonts/mono.ttf") format("truetype");
+}
+
+* {
+	font-family: 'hrm';
+	z-index: 1;
+}
+
+body, html {
+    margin: 0px auto;
+	background-color:#000;
+	width: 360px;
+	height: 360px;
+	overflow: hidden;
+}
+
+#vline{
+	position: absolute;
+	left: 220px;
+	top: 0px;
+	height: 360px;
+	width: 2px;
+	background-color: #666;
+}
+#hline{
+	position: absolute;
+	left: 220px;
+	top: 179px;
+	height: 2px;
+	width: 140px;
+	background-color: #666;
+}
+#maxText{
+	display: block;
+	position: absolute;
+	top: 40px;
+	left: 235px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	color: orange;
+}
+#minText{
+	
+	display: block;
+	height: 20px;
+	line-height: 20px;
+	position: absolute;
+	top: 300px;
+	left: 235px;
+	font-size: 12px;
+	color: #00f2fa;
+}
+
+
+#currentHR{
+	display: block;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 220px;
+	height: 360px;
+	line-height: 360px;
+	align-content: center;
+	text-align: center;
+	font-size: 5em;
+	color: #777;
+}
+#maxHR{
+	display: block;
+	position: absolute;
+	left: 210px;
+	top: 20px;
+	width: 140px;
+	height: 180px;
+	line-height: 180px;
+	align-content: center;
+	text-align: center;
+	font-size: 3em;
+	color: orange;
+}
+#minHR{
+	display: block;
+	position: absolute;
+	left: 210px;
+	top: 159px;
+	width: 140px;
+	height: 180px;
+	line-height: 180px;
+	align-content: center;
+	text-align: center;
+	font-size: 3em;
+	color: #00f2fa;
+}
+#resetMax{
+	position: absolute;
+	left: 220px;
+	top: 0px;
+	width: 140px;
+	height: 179px;
+	border-style: none;
+	background-color: transparent;
+	z-index: 300;
+	outline: none;
+}
+#resetMax:active{
+	background-color: brown;
+	opacity: 0.4;
+}
+#resetMin{
+	position: absolute;
+	left: 220px;
+	top: 180px;
+	width: 140px;
+	height: 179px;
+	border-style: none;
+	background-color: transparent;
+	z-index: 300;
+	outline: none;
+}
+#resetMin:active{
+	background-color: brown;
+	opacity: 0.4;
+}
+#startHRM{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 220px;
+	height: 360px;
+	border-style: none;
+	background-color: transparent;
+	z-index: 300;
+	outline: none;
+}
+#startHRM:active{
+	background-color: brown;
+	opacity: 0.4;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns:tizen="http://tizen.org/ns/widgets" xmlns="http://www.w3.org/ns/widgets" id="http://yourdomain/HRmonitor" version="1.0.0" height="360" width="360" viewmodes="maximized">
+    <tizen:application id="KqKFrBmNeW.HRmonitor" package="KqKFrBmNeW" required_version="2.3.2"/>
+    <author href="http://www.rogervanhout.nl" email="roger@snoeivanhout.nl">Roger van Hout</author>
+    <content src="index.html"/>
+    <description>Heart rate monitor with contstant heart rate monitoring and always- on screen. </description>
+    <feature name="tizen.org/feature/sensor.heart_rate_monitor"/>
+    <feature name="tizen.org/feature/screen.size.normal.360.360"/>
+    <icon src="icon.png"/>
+    <license href="https://mit-license.org">mit</license>
+    <name>HR monitor</name>
+    <tizen:privilege name="http://tizen.org/privilege/healthinfo"/>
+    <tizen:privilege name="http://tizen.org/privilege/power"/>
+    <tizen:profile name="wearable"/>
+    <tizen:setting background-support="disable" encryption="disable" hwkey-event="enable"/>
+</widget>

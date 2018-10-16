@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Simple HR monitor with always on - screen"/>
+
+    <title>Continous HRM</title>
+    <link rel="stylesheet" href="css/fork-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    
+</head>
+
+<body>
+  <div>
+    <button id=resetMax onclick="resetHrMax()"></button>
+    <button id=resetMin onclick="resetHrMin()"></button>
+    <button id=startHRM onclick="startCurrent()"></button>
+  </div>
+  <div>
+    <div id=currentHR>Go!</div>
+    <div id=maxHR>---</div>
+    <div id=minHR>---</div>
+  </div>
+  <div>
+    <div  id=maxText>max</div> 
+    <div  id=minText>min</div>  
+  </div>
+  <div>
+    <div id=vline></div>
+    <div id=hline></div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
