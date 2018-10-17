@@ -1,22 +1,10 @@
 document.addEventListener('tizenhwkey', function (e) {
 	if (e.keyName === "back") {
-		if (hrMin !== undefined) {
-			tizen.preference.setValue('hrMin', hrMin);
-		} else {
-			try {
-				tizen.preference.remove('hrMin');
-			} catch (e1) {
-				console.log(e1);
-			}
-		}
-		if (hrMax !== undefined) {
-			tizen.preference.setValue('hrMax', hrMax);
-		} else {
-			try {
-				tizen.preference.remove('hrMax');
-			} catch (e2) {
-				console.log(e2);
-			}
+		stopHRM();
+		try {
+			tizen.humanactivitymonitor.stop('HRM');
+		} catch (e4) {
+			console.log(e4);
 		}
 		try {
 			tizen.application.getCurrentApplication().exit();
@@ -40,6 +28,29 @@ if (tizen.preference.exists('hrMax')) {
 	maxMon.innerHTML = hrMax;
 }
 
+//saving min & max
+
+function minMaxSave() {
+	if (hrMin !== undefined) {
+		tizen.preference.setValue('hrMin', hrMin);
+	} else {
+		try {
+			tizen.preference.remove('hrMin');
+		} catch (e1) {
+			console.log(e1);
+		}
+	}
+	if (hrMax !== undefined) {
+		tizen.preference.setValue('hrMax', hrMax);
+	} else {
+		try {
+			tizen.preference.remove('hrMax');
+		} catch (e2) {
+			console.log(e2);
+		}
+	}
+}
+
 //HRM
 
 function startHRM() {
@@ -61,6 +72,7 @@ function stopHRM() {
 		console.log(e);
 	}
 	currentMon.style.color = "#777";
+	minMaxSave();
 }
 
 
@@ -164,3 +176,19 @@ try {
 }
 
 tizen.power.setScreenStateChangeListener(change);
+
+document.addEventListener("webkitvisibilitychange", function (state) {
+	if (state === "visible") {
+		try {
+			tizen.power.request('SCREEN', 'SCREEN_DIM');
+			if (onOff === true) {
+				startHRM();
+			}
+		} catch (e3) {
+			console.log(e3 + " " + state);
+		}
+	} else {
+		stopHRM();
+	}
+
+});
