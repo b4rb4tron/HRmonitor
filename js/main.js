@@ -2,11 +2,6 @@ document.addEventListener('tizenhwkey', function (e) {
 	if (e.keyName === "back") {
 		stopHRM();
 		try {
-			tizen.humanactivitymonitor.stop('HRM');
-		} catch (e4) {
-			console.log(e4);
-		}
-		try {
 			tizen.application.getCurrentApplication().exit();
 		} catch (ignore) {}
 	}
